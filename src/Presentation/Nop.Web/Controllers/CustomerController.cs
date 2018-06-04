@@ -15,6 +15,7 @@ using Nop.Core.Domain.Gdpr;
 using Nop.Core.Domain.Localization;
 using Nop.Core.Domain.Media;
 using Nop.Core.Domain.Messages;
+using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Tax;
 using Nop.Services.Authentication;
 using Nop.Services.Authentication.External;
@@ -56,6 +57,7 @@ namespace Nop.Web.Controllers
         private readonly IWorkContext _workContext;
         private readonly IStoreContext _storeContext;
         private readonly ICustomerService _customerService;
+        private readonly IGiftCardService _giftCardService;
         private readonly ICustomerAttributeParser _customerAttributeParser;
         private readonly ICustomerAttributeService _customerAttributeService;
         private readonly IExportManager _exportManager;
@@ -99,6 +101,7 @@ namespace Nop.Web.Controllers
             IWorkContext workContext,
             IStoreContext storeContext,
             ICustomerService customerService,
+            IGiftCardService giftCardService,
             ICustomerAttributeParser customerAttributeParser,
             ICustomerAttributeService customerAttributeService,
             IExportManager exportManager,
@@ -137,6 +140,7 @@ namespace Nop.Web.Controllers
             this._workContext = workContext;
             this._storeContext = storeContext;
             this._customerService = customerService;
+            this._giftCardService = giftCardService;
             this._customerAttributeParser = customerAttributeParser;
             this._customerAttributeService = customerAttributeService;
             this._exportManager = exportManager;
@@ -1613,6 +1617,65 @@ namespace Nop.Web.Controllers
 
             var model = _customerModelFactory.PrepareGdprToolsModel();
             model.Result = _localizationService.GetResource("Gdpr.DeleteRequested.Success");
+            return View(model);
+        }
+
+        #endregion
+
+        #region Check gift card balance
+
+        //check gift card balance page
+        [HttpsRequirement(SslRequirement.Yes)]
+        //available even when a store is closed
+        [CheckAccessClosedStore(true)]
+        public virtual IActionResult CheckGiftCardBalance()
+        {
+            var model = _customerModelFactory.PrepareCheckGiftCardBalanceModel();
+            return View(model);
+        }
+
+        [HttpPost, ActionName("checkbalance")]
+        [FormValueRequired("checkbalancegiftcard")]
+        public virtual IActionResult CheckBalance(string giftcardcouponcode, IFormCollection form)
+        {
+            giftcardcouponcode = "789";
+            //trim
+            if (giftcardcouponcode != null)
+                giftcardcouponcode = giftcardcouponcode.Trim();
+
+            //cart
+            var cart = _workContext.CurrentCustomer.ShoppingCartItems
+                .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
+                .LimitPerStore(_storeContext.CurrentStore.Id)
+                .ToList();
+
+            var model = _customerModelFactory.PrepareCheckGiftCardBalanceModel();
+
+            if (!cart.IsRecurring())
+            {
+                if (!string.IsNullOrWhiteSpace(giftcardcouponcode))
+                {
+                    var giftCard = _giftCardService.GetAllGiftCards(giftCardCouponCode: giftcardcouponcode).FirstOrDefault();                    
+                    var isGiftCardValid = giftCard != null && giftCard.IsGiftCardValid();
+                    if (isGiftCardValid)
+                    {
+                        model.Result = giftCard.GetGiftCardRemainingAmount().ToString();
+                    }
+                    else
+                    {
+                        model.Message = _localizationService.GetResource("ShoppingCart.GiftCardCouponCode.WrongGiftCard");
+                    }
+                }
+                else
+                {
+                    model.Message = _localizationService.GetResource("ShoppingCart.GiftCardCouponCode.WrongGiftCard");
+                }
+            }
+            else
+            {
+                model.Message = _localizationService.GetResource("ShoppingCart.GiftCardCouponCode.DontWorkWithAutoshipProducts");
+            }
+
             return View(model);
         }
 

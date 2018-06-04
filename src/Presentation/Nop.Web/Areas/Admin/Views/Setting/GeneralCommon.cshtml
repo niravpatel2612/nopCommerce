@@ -331,6 +331,16 @@
                                 <span asp-validation-for="DisplayDefaultFooterItemSettings.DisplayNewProductsFooterItem"></span>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <nop-override-store-checkbox asp-for="DisplayDefaultFooterItemSettings.DisplayCheckGiftCardBalanceFooterItem_OverrideForStore" asp-input="DisplayDefaultFooterItemSettings.DisplayCheckGiftCardBalanceFooterItem" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+                                <nop-label asp-for="DisplayDefaultFooterItemSettings.DisplayCheckGiftCardBalanceFooterItem" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="DisplayDefaultFooterItemSettings.DisplayCheckGiftCardBalanceFooterItem" />
+                                <span asp-validation-for="DisplayDefaultFooterItemSettings.DisplayCheckGiftCardBalanceFooterItem"></span>
+                            </div>
+                        </div>
                         
                         <div class="form-group">
                             <div class="col-md-3">

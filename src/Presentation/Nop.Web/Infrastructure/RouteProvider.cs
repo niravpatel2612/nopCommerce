@@ -43,6 +43,9 @@ namespace Nop.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("ShoppingCart", "cart/",
 				new { controller = "ShoppingCart", action = "Cart" });
 
+            routeBuilder.MapLocalizedRoute("checkbalance", "cart/",
+                new { controller = "Customer", action = "checkbalance" });
+
             //estimate shipping
             routeBuilder.MapLocalizedRoute("EstimateShipping", "cart/estimateshipping",
 				new {controller = "ShoppingCart", action = "GetEstimateShipping"});
@@ -72,6 +75,10 @@ namespace Nop.Web.Infrastructure
             //product search
             routeBuilder.MapLocalizedRoute("ProductSearch", "search/",
 				new { controller = "Catalog", action = "Search" });
+
+            //check gift card balance 
+            routeBuilder.MapLocalizedRoute("CheckGiftCardBalance", "customer",
+                new { controller = "Customer", action = "CheckGiftCardBalance" });           
 
             routeBuilder.MapLocalizedRoute("ProductSearchAutoComplete", "catalog/searchtermautocomplete",
 				new { controller = "Catalog", action = "SearchTermAutoComplete" });

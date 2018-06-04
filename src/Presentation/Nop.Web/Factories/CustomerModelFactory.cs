@@ -887,6 +887,16 @@ namespace Nop.Web.Factories
             return model;
         }
 
+        /// <summary>
+        /// Prepare the check gift card balance madel
+        /// </summary>
+        /// <returns>Check gift card balance madel</returns>
+        public virtual CheckGiftCardBalanceModel PrepareCheckGiftCardBalanceModel()
+        {
+            var model = new CheckGiftCardBalanceModel();
+            return model;
+        }
+
         #endregion
     }
 }

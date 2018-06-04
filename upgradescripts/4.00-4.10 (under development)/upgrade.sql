@@ -1169,6 +1169,18 @@ set @resources='
   <LocaleResource Name="Admin.Configuration.Settings.Catalog.ShowLinkToAllResultInSearchAutoComplete.Hint">
     <Value>Determines whether the link to all results should be displayed in the autocomplete search box. Displayed if the number of items found is greater than the displayed quantity in the autocomplete box.</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultFooterItemSettingsModel.DisplayCheckGiftCardBalanceFooterItem">
+    <Value>Display "Check gift card balance"</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.GeneralCommon.DisplayDefaultFooterItemSettingsModel.DisplayCheckGiftCardBalanceFooterItem.Hint">
+    <Value>Check if "Check gift card balance" menu item should be displayed in the footer.</Value>
+  </LocaleResource>
+  <LocaleResource Name="PageTitle.CheckGiftCardBalance">
+    <Value>Check gift card balance</Value>
+  </LocaleResource>
+  <LocaleResource Name="CheckGiftCardBalance">
+    <Value>Check gift card balance</Value>
+  </LocaleResource>
 </Language>
 '
 

@@ -53,6 +53,11 @@ namespace Nop.Core.Domain.Common
         public bool DisplayNewProductsFooterItem { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether to display "check gift card balance" footer item
+        /// </summary>
+        public bool DisplayCheckGiftCardBalanceFooterItem { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether to display "customer info" footer item
         /// </summary>
         public bool DisplayCustomerInfoFooterItem { get; set; }

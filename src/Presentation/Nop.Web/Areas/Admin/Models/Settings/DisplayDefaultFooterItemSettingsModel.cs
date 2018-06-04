@@ -46,6 +46,10 @@ namespace Nop.Web.Areas.Admin.Models.Settings
         public bool DisplayNewProductsFooterItem { get; set; }
         public bool DisplayNewProductsFooterItem_OverrideForStore { get; set; }
 
+        [NopResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.DisplayDefaultFooterItemSettingsModel.DisplayCheckGiftCardBalanceFooterItem")]
+        public bool DisplayCheckGiftCardBalanceFooterItem { get; set; }
+        public bool DisplayCheckGiftCardBalanceFooterItem_OverrideForStore { get; set; }
+
         [NopResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.DisplayDefaultFooterItemSettingsModel.DisplayCustomerInfoFooterItem")]
         public bool DisplayCustomerInfoFooterItem { get; set; }
         public bool DisplayCustomerInfoFooterItem_OverrideForStore { get; set; }

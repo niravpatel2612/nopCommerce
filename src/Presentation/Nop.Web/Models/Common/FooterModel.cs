@@ -43,6 +43,7 @@ namespace Nop.Web.Models.Common
         public bool DisplayShoppingCartFooterItem { get; set; }
         public bool DisplayWishlistFooterItem { get; set; }
         public bool DisplayApplyVendorAccountFooterItem { get; set; }
+        public bool DisplayCheckGiftCardBalanceFooterItem { get; set; }
 
         #region Nested classes
 
