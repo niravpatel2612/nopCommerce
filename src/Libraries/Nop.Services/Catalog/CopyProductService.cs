@@ -642,6 +642,7 @@ namespace Nop.Services.Catalog
                 LimitedToStores = product.LimitedToStores,
                 Sku = newSku,
                 ManufacturerPartNumber = product.ManufacturerPartNumber,
+                Author = product.Author,
                 Gtin = product.Gtin,
                 IsGiftCard = product.IsGiftCard,
                 GiftCardType = product.GiftCardType,

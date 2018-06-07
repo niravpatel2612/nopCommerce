@@ -528,166 +528,175 @@
                     </div>
 
                     @(Html.LocalizedEditor<ProductModel, ProductLocalizedModel>("product-info-localized",
-                    @<div>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <nop-label asp-for="@Model.Locales[item].Name" />
+                            @<div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <nop-label asp-for="@Model.Locales[item].Name" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <nop-editor asp-for="@Model.Locales[item].Name" />
+                                        <span asp-validation-for="@Model.Locales[item].Name"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <nop-label asp-for="@Model.Locales[item].ShortDescription" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <nop-textarea asp-for="@Model.Locales[item].ShortDescription" />
+                                        <span asp-validation-for="@Model.Locales[item].ShortDescription"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3">
+                                        <nop-label asp-for="@Model.Locales[item].FullDescription" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <nop-editor asp-for="@Model.Locales[item].FullDescription" asp-template="RichEditor" />
+                                        <span asp-validation-for="@Model.Locales[item].FullDescription"></span>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />
                             </div>
-                            <div class="col-md-9">
-                                <nop-editor asp-for="@Model.Locales[item].Name" />
-                                <span asp-validation-for="@Model.Locales[item].Name"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <nop-label asp-for="@Model.Locales[item].ShortDescription" />
-                            </div>
-                            <div class="col-md-9">
-                                <nop-textarea asp-for="@Model.Locales[item].ShortDescription" />
-                                <span asp-validation-for="@Model.Locales[item].ShortDescription"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <nop-label asp-for="@Model.Locales[item].FullDescription" />
-                            </div>
-                            <div class="col-md-9">
-                                <nop-editor asp-for="@Model.Locales[item].FullDescription" asp-template="RichEditor" />
-                                <span asp-validation-for="@Model.Locales[item].FullDescription"></span>
-                            </div>
-                        </div>
-                        
-                        <input type="hidden" asp-for="@Model.Locales[item].LanguageId" />
-                    </div>
-                            ,@<div>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <nop-label asp-for="Name" />
-                            </div>
-                            <div class="col-md-9">
-                                <nop-editor asp-for="Name" asp-required="true" />
-                                <span asp-validation-for="Name"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <nop-label asp-for="ShortDescription" />
-                            </div>
-                            <div class="col-md-9">
-                                <nop-textarea asp-for="ShortDescription" />
-                                <span asp-validation-for="ShortDescription"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-3">
-                                <nop-label asp-for="FullDescription" />
-                            </div>
-                            <div class="col-md-9">
-                                <nop-editor asp-for="FullDescription" asp-template="RichEditor" />
-                                <span asp-validation-for="FullDescription"></span>
-                            </div>
-                        </div>
-                    </div>
-                            ))
+                                                    ,@<div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <nop-label asp-for="Name" />
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <nop-editor asp-for="Name" asp-required="true" />
+                                                                <span asp-validation-for="Name"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <nop-label asp-for="ShortDescription" />
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <nop-textarea asp-for="ShortDescription" />
+                                                                <span asp-validation-for="ShortDescription"></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="col-md-3">
+                                                                <nop-label asp-for="FullDescription" />
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                                <nop-editor asp-for="FullDescription" asp-template="RichEditor" />
+                                                                <span asp-validation-for="FullDescription"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                                            ))
                     <div class="form-group">
                         <div class="col-md-3">
-							<nop-label asp-for="Sku" />
+                            <nop-label asp-for="Sku" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="Sku" />
-							<span asp-validation-for="Sku"></span>
+                            <nop-editor asp-for="Sku" />
+                            <span asp-validation-for="Sku"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Published ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="Published" />
+                            <nop-label asp-for="Published" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="Published" />
-							<span asp-validation-for="Published"></span>
+                            <nop-editor asp-for="Published" />
+                            <span asp-validation-for="Published"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductTags ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="ProductTags" />
+                            <nop-label asp-for="ProductTags" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="ProductTags" />
-							<span asp-validation-for="ProductTags"></span>
+                            <nop-editor asp-for="ProductTags" />
+                            <span asp-validation-for="ProductTags"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.GTIN ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="Gtin" />
+                            <nop-label asp-for="Gtin" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="Gtin" />
-							<span asp-validation-for="Gtin"></span>
+                            <nop-editor asp-for="Gtin" />
+                            <span asp-validation-for="Gtin"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ManufacturerPartNumber ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="ManufacturerPartNumber" />
+                            <nop-label asp-for="ManufacturerPartNumber" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="ManufacturerPartNumber" />
-							<span asp-validation-for="ManufacturerPartNumber"></span>
+                            <nop-editor asp-for="ManufacturerPartNumber" />
+                            <span asp-validation-for="ManufacturerPartNumber"></span>
+                        </div>
+                    </div>
+                    <div class="form-group @(Model.ProductEditorSettingsModel.Author ? null : "advanced-setting")">
+                        <div class="col-md-3">
+                            <nop-label asp-for="Author" />
+                        </div>
+                        <div class="col-md-9">
+                            <nop-editor asp-for="Author" />
+                            <span asp-validation-for="Author"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ShowOnHomePage ? null : "advanced-setting")" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
                         <div class="col-md-3">
-							<nop-label asp-for="ShowOnHomePage" />
+                            <nop-label asp-for="ShowOnHomePage" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="ShowOnHomePage" />
-							<span asp-validation-for="ShowOnHomePage"></span>
+                            <nop-editor asp-for="ShowOnHomePage" />
+                            <span asp-validation-for="ShowOnHomePage"></span>
                         </div>
                     </div>
                     <nop-nested-setting asp-for="ShowOnHomePage">
                         <div class="form-group @(Model.ProductEditorSettingsModel.DisplayOrder ? null : "advanced-setting")" id="pnlDisplayOrder" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
-                        <div class="col-md-3">
-							<nop-label asp-for="DisplayOrder" />
+                            <div class="col-md-3">
+                                <nop-label asp-for="DisplayOrder" />
+                            </div>
+                            <div class="col-md-9">
+                                <nop-editor asp-for="DisplayOrder" />
+                                <span asp-validation-for="DisplayOrder"></span>
+                            </div>
                         </div>
-                        <div class="col-md-9">
-							<nop-editor asp-for="DisplayOrder" />
-							<span asp-validation-for="DisplayOrder"></span>
-                        </div>
-                    </div>
                     </nop-nested-setting>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AllowCustomerReviews ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="AllowCustomerReviews" />
+                            <nop-label asp-for="AllowCustomerReviews" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="AllowCustomerReviews" />
-							<span asp-validation-for="AllowCustomerReviews"></span>
+                            <nop-editor asp-for="AllowCustomerReviews" />
+                            <span asp-validation-for="AllowCustomerReviews"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AvailableStartDate ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="AvailableStartDateTimeUtc" />
+                            <nop-label asp-for="AvailableStartDateTimeUtc" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="AvailableStartDateTimeUtc" />
-							<span asp-validation-for="AvailableStartDateTimeUtc"></span>
+                            <nop-editor asp-for="AvailableStartDateTimeUtc" />
+                            <span asp-validation-for="AvailableStartDateTimeUtc"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AvailableEndDate ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="AvailableEndDateTimeUtc" />
+                            <nop-label asp-for="AvailableEndDateTimeUtc" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="AvailableEndDateTimeUtc" />
-							<span asp-validation-for="AvailableEndDateTimeUtc"></span>
+                            <nop-editor asp-for="AvailableEndDateTimeUtc" />
+                            <span asp-validation-for="AvailableEndDateTimeUtc"></span>
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.MarkAsNew ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="MarkAsNew" />
+                            <nop-label asp-for="MarkAsNew" />
                         </div>
                         <div class="col-md-9">
-							<nop-editor asp-for="MarkAsNew" />
-							<span asp-validation-for="MarkAsNew"></span>
+                            <nop-editor asp-for="MarkAsNew" />
+                            <span asp-validation-for="MarkAsNew"></span>
                         </div>
                     </div>
                     <nop-nested-setting asp-for="MarkAsNew">
@@ -712,18 +721,18 @@
                     </nop-nested-setting>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AdminComment ? null : "advanced-setting")">
                         <div class="col-md-3">
-							<nop-label asp-for="AdminComment" />
+                            <nop-label asp-for="AdminComment" />
                         </div>
                         <div class="col-md-9">
-							<nop-textarea asp-for="AdminComment" />
-							<span asp-validation-for="AdminComment"></span>
+                            <nop-textarea asp-for="AdminComment" />
+                            <span asp-validation-for="AdminComment"></span>
                         </div>
                     </div>
                     @if (Model.CreatedOn.HasValue)
                     {
                         <div class="form-group @(Model.ProductEditorSettingsModel.CreatedOn ? null : "advanced-setting")">
                             <div class="col-md-3">
-								<nop-label asp-for="CreatedOn" />
+                                <nop-label asp-for="CreatedOn" />
                             </div>
                             <div class="col-md-9">
                                 <div class="form-text-row">@Model.CreatedOn.Value.ToString("F")</div>
@@ -734,7 +743,7 @@
                     {
                         <div class="form-group @(Model.ProductEditorSettingsModel.UpdatedOn ? null : "advanced-setting")">
                             <div class="col-md-3">
-								<nop-label asp-for="UpdatedOn" />
+                                <nop-label asp-for="UpdatedOn" />
                             </div>
                             <div class="col-md-9">
                                 <div class="form-text-row">@Model.UpdatedOn.Value.ToString("F")</div>

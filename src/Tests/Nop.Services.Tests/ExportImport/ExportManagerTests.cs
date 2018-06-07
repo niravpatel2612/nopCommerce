@@ -626,6 +626,7 @@ namespace Nop.Services.Tests.ExportImport
                     Published = true,
                     Sku = "TestSku",
                     ManufacturerPartNumber = "TestManufacturerPartNumber",
+                    Author = "TestAuthor",
                     Gtin = "TestGtin",
                     IsGiftCard = false,
                     GiftCardTypeId = (int)GiftCardType.Virtual,

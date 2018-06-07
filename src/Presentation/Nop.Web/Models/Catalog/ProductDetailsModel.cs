@@ -42,7 +42,7 @@ namespace Nop.Web.Models.Catalog
         public string MetaDescription { get; set; }
         public string MetaTitle { get; set; }
         public string SeName { get; set; }
-
+        
         public ProductType ProductType { get; set; }
 
         public bool ShowSku { get; set; }
@@ -53,6 +53,8 @@ namespace Nop.Web.Models.Catalog
 
         public bool ShowGtin { get; set; }
         public string Gtin { get; set; }
+
+        public string Author { get; set; }
 
         public bool ShowVendor { get; set; }
         public VendorBriefInfoModel VendorModel { get; set; }

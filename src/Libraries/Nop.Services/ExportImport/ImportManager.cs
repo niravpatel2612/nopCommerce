@@ -1332,6 +1332,9 @@ namespace Nop.Services.ExportImport
                             case "ManufacturerPartNumber":
                                 product.ManufacturerPartNumber = property.StringValue;
                                 break;
+                            case "Author":
+                                product.Author = property.StringValue;
+                                break; 
                             case "Gtin":
                                 product.Gtin = property.StringValue;
                                 break;

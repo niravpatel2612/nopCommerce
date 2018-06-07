@@ -25,6 +25,7 @@ namespace Nop.Data.Mapping.Catalog
             builder.Property(product => product.MetaTitle).HasMaxLength(400);
             builder.Property(product => product.Sku).HasMaxLength(400);
             builder.Property(product => product.ManufacturerPartNumber).HasMaxLength(400);
+            builder.Property(product => product.Author).HasMaxLength(400);
             builder.Property(product => product.Gtin).HasMaxLength(400);
             builder.Property(product => product.AdditionalShippingCharge).HasColumnType("decimal(18, 4)");
             builder.Property(product => product.Price).HasColumnType("decimal(18, 4)");

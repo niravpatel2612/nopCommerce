@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Discount Message",
+  "SystemName": "Widgets.DiscountMessage",
+  "Version": "1.0",
+  "SupportedVersions": [ "4.10" ],
+  "Author": "Nirav Patel",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.DiscountMessage.dll",
+  "Description": "This plugin will show message in product details page in public store."
+}

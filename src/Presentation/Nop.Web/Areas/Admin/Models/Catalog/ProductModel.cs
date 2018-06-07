@@ -143,6 +143,9 @@ namespace Nop.Web.Areas.Admin.Models.Catalog
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.GTIN")]
         public virtual string Gtin { get; set; }
 
+        [NopResourceDisplayName("Admin.Catalog.Products.Fields.Author")]
+        public string Author { get; set; }
+
         [NopResourceDisplayName("Admin.Catalog.Products.Fields.IsGiftCard")]
         public bool IsGiftCard { get; set; }
 

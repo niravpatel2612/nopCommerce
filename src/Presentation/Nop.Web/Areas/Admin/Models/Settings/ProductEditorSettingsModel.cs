@@ -49,6 +49,9 @@ namespace Nop.Web.Areas.Admin.Models.Settings
         [NopResourceDisplayName("Admin.Configuration.Settings.ProductEditor.ManufacturerPartNumber")]
         public bool ManufacturerPartNumber { get; set; }
 
+        [NopResourceDisplayName("Admin.Configuration.Settings.ProductEditor.Author")]
+        public bool Author { get; set; }
+
         [NopResourceDisplayName("Admin.Configuration.Settings.ProductEditor.GTIN")]
         public bool GTIN { get; set; }
 

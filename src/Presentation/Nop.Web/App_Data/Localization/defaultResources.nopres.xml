@@ -2724,6 +2724,12 @@
   <LocaleResource Name="Admin.Catalog.Products.Fields.AutomaticallyAddRequiredProducts.Hint">
     <Value>Check to automatically add these products to the cart.</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.Author">
+    <Value>Author</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Catalog.Products.Fields.Author.Hint">
+    <Value>Author</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Catalog.Products.Fields.AvailableEndDateTime">
     <Value>Available end date</Value>
   </LocaleResource>
@@ -7559,6 +7565,9 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.AllowAddingOnlyExistingAttributeCombinations">
     <Value>Allow only existing attribute combinations</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.Author">
+    <Value>Author</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.ProductEditor.AvailableEndDate">
     <Value>Available end date</Value>
@@ -16790,6 +16799,9 @@
   </LocaleResource>
   <LocaleResource Name="Products.Vendor">
     <Value>Vendor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Products.Author">
+    <Value>Author</Value>
   </LocaleResource>
    <LocaleResource Name="Products.Wishlist.AddToWishlist">
     <Value>Add to wishlist</Value>

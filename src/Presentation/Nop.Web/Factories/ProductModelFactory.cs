@@ -1198,6 +1198,7 @@ namespace Nop.Web.Factories
                 ShowManufacturerPartNumber = _catalogSettings.ShowManufacturerPartNumber,
                 FreeShippingNotificationEnabled = _catalogSettings.ShowFreeShippingNotification,
                 ManufacturerPartNumber = product.ManufacturerPartNumber,
+                Author = product.Author,
                 ShowGtin = _catalogSettings.ShowGtin,
                 Gtin = product.Gtin,
                 ManageInventoryMethod = product.ManageInventoryMethod,

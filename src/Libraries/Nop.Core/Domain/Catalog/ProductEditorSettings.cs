@@ -76,7 +76,10 @@ namespace Nop.Core.Domain.Catalog
         /// Gets or sets a value indicating whether 'GTIN' field is shown
         /// </summary>
         public bool GTIN { get; set; }
-
+        /// <summary>
+        /// Gets or sets a value indicating whether 'Auther' field is shown
+        /// </summary>
+        public bool Author { get; set; }
         /// <summary>
         /// Gets or sets a value indicating whether 'Product cost' field is shown
         /// </summary>
